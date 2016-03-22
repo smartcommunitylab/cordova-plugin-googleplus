@@ -206,7 +206,8 @@ public class GooglePlus extends CordovaPlugin implements ConnectionCallbacks, On
             result.put("oauthToken", token);
           } else if (GooglePlus.this.requestOfflineToken) {
             // Retrieve the oauth token with offline mode
-            scope = "oauth2:" + Scopes.PLUS_LOGIN;
+            //scope = "oauth2:" + Scopes.PLUS_LOGIN;
+            scope = "oauth2:" + scopes2string(GooglePlus.this.scopes);
             token = GoogleAuthUtil.getToken(context, email, scope);
             // Since this is a short-lived one time token immediately remove it from
             // the cache. This ensures a new token each time the user authenticates.
@@ -316,7 +317,16 @@ public class GooglePlus extends CordovaPlugin implements ConnectionCallbacks, On
       savedCallbackContext.error("result parsing trouble, error: " + e.getMessage());
     }
   }
-
+  
+  private static String scopes2string(List<Scope> scopes) {
+      StringBuilder sb = new StringBuilder();
+      for (Scope s : scopes) {
+          sb.append(s.toString()).append(' ');
+      }
+      sb.deleteCharAt(sb.length() - 1);
+      return sb.toString();
+  }
+  
   // same as iOS values
   private static String getGender(int gender) {
     switch (gender) {
