@@ -1,5 +1,5 @@
 # Google+ Cordova/PhoneGap Plugin
-by [Eddy Verbruggen](http://twitter.com/eddyverbruggen)
+by [Eddy Verbruggen](http://twitter.com/eddyverbruggen) edited by [Smart Community Lab](https://github.com/smartcommunitylab) due to unwanted scope requested issue
 
 ## 0. Index
 
