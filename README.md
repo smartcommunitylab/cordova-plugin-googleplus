@@ -56,7 +56,7 @@ $ cordova prepare
 
 To fetch the latest version from GitHub, use
 ```
-$ cordova plugin add https://github.com/EddyVerbruggen/cordova-plugin-googleplus --variable REVERSED_CLIENT_ID=myreversedclientid
+$ cordova plugin add https://github.com/smartcommunitylab/cordova-plugin-googleplus --variable REVERSED_CLIENT_ID=myreversedclientid
 $ cordova prepare
 ```
 
